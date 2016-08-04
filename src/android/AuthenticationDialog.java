@@ -1,4 +1,4 @@
-package com.msopentech.authDialog;
+ package com.msopentech.authDialog;
 
 import org.apache.cordova.*;
 import org.apache.http.auth.AuthScope;
