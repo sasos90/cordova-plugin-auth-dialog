@@ -17,15 +17,13 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AuthDialog"> 
-                <param name="android-package" value="com.msopentech.authDialog.AuthRequestHandler"/>
-                <param name="onload" value="true" />
+                <param name="android-package" value="com.msopentech.authDialog.AuthenticationDialog"/>
             </feature>
         </config-file>
-        <source-file src="src/android/AuthRequestHandler.java" target-dir="src/com/msopentech/authDialog" />
         <source-file src="src/android/AuthenticationDialog.java" target-dir="src/com/msopentech/authDialog" />
 
-        <resource-file src="src/android/res/layout/http_authentication.xml" target="res/layout/http_authentication.xml" />
-        <resource-file src="src/android/res/values/authdialog-strings.xml" target="res/values/authdialog-strings.xml" />
+		<framework src="src/android/AuthenticationDialog.gradle" custom="true" type="gradleReference" />
+        
     </platform>
 
     <platform name="ios">
