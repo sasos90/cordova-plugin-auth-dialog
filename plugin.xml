@@ -18,6 +18,7 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AuthDialog"> 
                 <param name="android-package" value="com.msopentech.authDialog.AuthenticationDialog"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
         <source-file src="src/android/AuthenticationDialog.java" target-dir="src/com/msopentech/authDialog" />
