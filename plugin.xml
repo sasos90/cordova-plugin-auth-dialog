@@ -22,6 +22,8 @@
             </feature>
         </config-file>
         <source-file src="src/android/AuthenticationDialog.java" target-dir="src/com/msopentech/authDialog" />
+        <source-file src="src/android/JCIFSEngine.java" target-dir="src/com/msopentech/authDialog" />
+        <source-file src="src/android/NTLMSchemeFactory.java" target-dir="src/com/msopentech/authDialog" />
 
 		<framework src="src/android/AuthenticationDialog.gradle" custom="true" type="gradleReference" />
         
