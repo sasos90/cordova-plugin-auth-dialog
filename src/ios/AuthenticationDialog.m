@@ -50,15 +50,44 @@
     
     // 405 means 'Mehod not allowed' which is totally ok to understand
     // we have successfully passed authentication
-    if (statusCode == 200 || statusCode == 405) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    } else {
+    if (!(statusCode == 200 || statusCode == 405)) {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:
                         [NSHTTPURLResponse localizedStringForStatusCode: statusCode]];
+        
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+
     }
 
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
 }
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSError *error = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    CDVPluginResult* pluginResult;
+
+    
+    [connection cancel];
+    if(!error){
+        
+        
+        NSString *resultString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"result data %@", resultString);
+        
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:resultString];
+
+        
+        
+    } else {
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error localizedDescription]];
+    }
+    
+    
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
+
+}
+
 
 - (BOOL) isSupportedAuthMethod:(NSString*)authenticationMethod {
     // TODO extend to others
