@@ -26,6 +26,10 @@
         <source-file src="src/android/NTLMSchemeFactory.java" target-dir="src/com/msopentech/authDialog" />
 
 		<framework src="src/android/authenticationdialog.gradle" custom="true" type="gradleReference" />
+		
+        <js-module name="AuthDialog" src="src/android/authDialog.js">
+            <clobbers target="window.authDialog" />
+        </js-module>
         
     </platform>
 
