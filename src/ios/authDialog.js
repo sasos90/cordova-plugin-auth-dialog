@@ -19,7 +19,6 @@
 
 /*global cordova, module*/
 
-
 var authDialog  = {};
 
 function authenticateOnce (uri, successCallback, errorCallback, userName, password, domain, allowBypassAuth) {
@@ -59,3 +58,5 @@ authDialog.authenticate = function (uri, /*optional*/ successCallback, /*optiona
     // this makes it possible to avoid passing credentials every app start
     authenticateOnce (uri, successCallback, onError, userName, password, domain, !(userName || password));
 };
+
+module.exports = authDialog;
