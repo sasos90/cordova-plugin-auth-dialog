@@ -12,7 +12,8 @@
     self.uri = [command.arguments objectAtIndex:0];
     self.userName = [command.arguments objectAtIndex:1];
     self.password = [command.arguments objectAtIndex:2];
-    self.allowBypassAuth = [[command.arguments objectAtIndex:3] boolValue];
+	self.domain = [command.arguments objectAtIndex:3];
+    self.allowBypassAuth = [[command.arguments objectAtIndex:4] boolValue];
 
     self.callbackId = command.callbackId;
 
@@ -116,6 +117,12 @@ CredentialsViewController * credentialsViewController;
 
         // use predefined credentials if provided
         if (![self.userName isEqual:[NSNull null]] && ![self.password isEqual:[NSNull null]]) {
+			
+			
+			if(![self.domain isEqual:[NSNull null]]) {
+				self.userName = [NSString stringWithFormat:@"%@\\%@",  self.domain, self.userName];
+			}
+			
                 
             [[challenge sender] useCredential:[NSURLCredential credentialWithUser:self.userName
                                                                              password:self.password

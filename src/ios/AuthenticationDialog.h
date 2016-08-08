@@ -11,6 +11,7 @@
 @property NSString *uri;
 @property NSString *userName;
 @property NSString *password;
+@property NSString *domain;
 @property Boolean allowBypassAuth;
 
 @property NSString *callbackId;
