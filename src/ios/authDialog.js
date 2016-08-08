@@ -50,7 +50,7 @@ authDialog.authenticate = function (uri, /*optional*/ successCallback, /*optiona
         // if first attemp has failed then user name and password are invalid
         // so we should ask user to provide another credentials so we don't pass user/password
         setTimeout(function() {
-             authenticateOnce (uri, successCallback, onError, null, null, false);
+             authenticateOnce (uri, successCallback, onError, null, null, null, false);
         });
     };
     
