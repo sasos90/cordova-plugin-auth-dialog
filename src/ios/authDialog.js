@@ -34,7 +34,7 @@ authDialog.authenticate = function (uri, /*optional*/ successCallback, /*optiona
     userName = userName || null;
     password = password || null;
 	domain = domain || null;
-    maxAttempts = maxAttempts || 5;
+    //maxAttempts = maxAttempts;
     
     errorCallback = errorCallback || function() {};
     successCallback = successCallback || function() {};
