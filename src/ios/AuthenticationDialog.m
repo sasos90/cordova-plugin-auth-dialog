@@ -129,7 +129,8 @@ CredentialsViewController * credentialsViewController;
                                                                       persistence:NSURLCredentialPersistencePermanent]
                        forAuthenticationChallenge:challenge];
         } else { // request credentials
-            credentialsViewController = [[CredentialsViewController alloc] init];
+            /*
+			credentialsViewController = [[CredentialsViewController alloc] init];
                 
             credentialsViewController.onResult = ^(NSString * userName, NSString* password, BOOL isCancelled)  {
                     
@@ -146,6 +147,7 @@ CredentialsViewController * credentialsViewController;
             };
                 
             [credentialsViewController requestUserCredentials:self.uri];
+			*/
         }
     }
     else
