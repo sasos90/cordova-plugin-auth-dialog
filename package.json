@@ -1,0 +1,31 @@
+{
+  "name": "com.msopentech.authdialog",
+  "version": "0.1.0-dev",
+  "description": "Authentication Dialog",
+  "cordova": {
+    "id": "com.msopentech.authdialog",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasos90/cordova-plugin-auth-dialog.git"
+  },
+  "keywords": [
+    "cordova"
+  ],
+  "scripts": {
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+  }
+}
